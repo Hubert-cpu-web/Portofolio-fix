@@ -658,7 +658,7 @@ function setupModal() {
 }
 
 /* --------------------------------------------------------------------------
-   6. CONTACT FORM SIMULATION
+   6. CONTACT FORM — Formspree Integration
    -------------------------------------------------------------------------- */
 function setupContactForm() {
   const form = document.getElementById("contact-form");
@@ -666,44 +666,72 @@ function setupContactForm() {
 
   if (!form) return;
 
-  form.addEventListener("submit", e => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const name = document.getElementById("contact-name").value;
-    const email = document.getElementById("contact-email").value;
+    const name    = document.getElementById("contact-name").value;
+    const email   = document.getElementById("contact-email").value;
+    const subject = document.getElementById("contact-subject").value;
     const message = document.getElementById("contact-message").value;
 
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
+    const submitBtn  = form.querySelector('button[type="submit"]');
+    const originalHTML = submitBtn.innerHTML;
 
+    // Loading state
     submitBtn.disabled = true;
     submitBtn.innerHTML = `
       <i class="fa-solid fa-spinner fa-spin"></i>
       <span>Mengirim Pesan...</span>
     `;
 
-    setTimeout(() => {
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = originalText;
-      form.reset();
+    try {
+      const response = await fetch("https://formspree.io/f/mzeejdly", {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: new FormData(form)
+      });
 
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalHTML;
+
+      if (response.ok) {
+        // Success
+        form.reset();
+        if (alertBox) {
+          alertBox.classList.remove("hidden");
+          alertBox.innerHTML = `
+            <div class="p-4 rounded-xl bg-emerald-950/60 border border-emerald-500/50 text-emerald-200 flex items-start gap-3">
+              <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+              <div>
+                <div class="font-bold text-sm">Pesan Berhasil Terkirim! 🎉</div>
+                <div class="text-xs text-emerald-300/90 mt-0.5">Terima kasih <strong>${name}</strong>, pesan dari <strong>${email}</strong> sudah masuk ke Gmail saya. Akan saya balas dalam 24 jam!</div>
+              </div>
+            </div>
+          `;
+          setTimeout(() => alertBox.classList.add("hidden"), 8000);
+        }
+      } else {
+        // Error from Formspree
+        const data = await response.json();
+        throw new Error(data?.errors?.[0]?.message || "Terjadi kesalahan.");
+      }
+    } catch (err) {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalHTML;
       if (alertBox) {
         alertBox.classList.remove("hidden");
         alertBox.innerHTML = `
-          <div class="p-4 rounded-xl bg-emerald-950/60 border border-emerald-500/50 text-emerald-200 flex items-start gap-3">
-            <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+          <div class="p-4 rounded-xl bg-red-950/60 border border-red-500/50 text-red-200 flex items-start gap-3">
+            <i class="fa-solid fa-circle-exclamation text-red-400 mt-1"></i>
             <div>
-              <div class="font-bold text-sm">Pesan Berhasil Terkirim!</div>
-              <div class="text-xs text-emerald-300/90 mt-0.5">Terima kasih <strong>${name}</strong>, saya akan segera membalas email Anda ke <strong>${email}</strong> dalam waktu maksimal 24 jam.</div>
+              <div class="font-bold text-sm">Gagal Mengirim Pesan</div>
+              <div class="text-xs text-red-300/90 mt-0.5">${err.message} — Coba lagi atau hubungi via WhatsApp.</div>
             </div>
           </div>
         `;
-
-        setTimeout(() => {
-          alertBox.classList.add("hidden");
-        }, 7000);
+        setTimeout(() => alertBox.classList.add("hidden"), 8000);
       }
-    }, 1200);
+    }
   });
 }
 
