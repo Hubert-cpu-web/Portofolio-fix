@@ -1,0 +1,303 @@
+/* ==========================================================================
+   CUSTOM STYLES & ANIMATIONS FOR MODERN DEVELOPER PORTFOLIO
+   (Liquid Chrome & Rex Orange County Indie Vibe Edition)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #fb923c;
+  --apricot-accent: #fb923c;
+  --bg-obsidian: #040508;
+  --card-dark: rgba(10, 14, 23, 0.75);
+  --border-chrome: rgba(255, 255, 255, 0.14);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #040508;
+}
+
+.font-syne {
+  font-family: 'Syne', sans-serif;
+}
+
+code, pre, .font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+body {
+  background-color: #040508;
+  background-image: radial-gradient(circle at 50% 12%, rgba(251, 146, 60, 0.05) 0%, transparent 50%), url('../assets/images/liquid-chrome-bg.svg');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  color: #f8fafc;
+}
+
+/* Chrome Typography (Matching Reference Image) */
+.chrome-letter-text {
+  font-family: 'Syne', sans-serif;
+  font-weight: 900;
+  background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 32%, #64748b 58%, #0f172a 82%, #334155 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.95));
+  letter-spacing: -0.04em;
+  display: inline-block;
+  user-select: none;
+}
+
+/* Liquid Glass Cards */
+.liquid-glass {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(10, 14, 23, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.85);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.95), 0 0 25px -5px rgba(251, 146, 60, 0.15);
+}
+
+/* Chrome Pill Elements */
+.chrome-pill {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(6, 9, 15, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.chrome-pill:hover {
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+/* Rex Orange County Equalizer Animation */
+@keyframes eqBounce {
+  0%, 100% { height: 4px; }
+  50% { height: 14px; }
+}
+
+.eq-bar-1 { animation: eqBounce 0.8s ease-in-out infinite; }
+.eq-bar-2 { animation: eqBounce 0.6s ease-in-out infinite 0.2s; }
+.eq-bar-3 { animation: eqBounce 0.9s ease-in-out infinite 0.4s; }
+.eq-bar-4 { animation: eqBounce 0.7s ease-in-out infinite 0.1s; }
+
+.equalizer-paused span {
+  animation: none !important;
+  height: 4px !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Light Mode Overrides */
+html.light {
+  --bg-dark: #f8fafc;
+  --card-dark: rgba(255, 255, 255, 0.85);
+  --border-dark: rgba(226, 232, 240, 0.9);
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+}
+
+html.light body {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+html.light .glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(226, 232, 240, 0.8);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+html.light .glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(226, 232, 240, 0.8);
+}
+
+html.light .text-slate-100,
+html.light .text-white {
+  color: #0f172a !important;
+}
+
+html.light .text-slate-300,
+html.light .text-slate-400 {
+  color: #475569 !important;
+}
+
+html.light .bg-slate-900\/80,
+html.light .bg-slate-900\/90,
+html.light .bg-slate-900 {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-slate-800,
+html.light .bg-slate-800\/50,
+html.light .bg-slate-800\/80 {
+  background-color: #f8fafc !important;
+}
+
+html.light .border-slate-800,
+html.light .border-slate-700 {
+  border-color: #e2e8f0 !important;
+}
+
+/* Glassmorphism Styles */
+.glass-nav {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background: rgba(9, 13, 22, 0.82);
+  border-bottom: 1px solid rgba(51, 65, 85, 0.35);
+}
+
+.glass-card {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(51, 65, 85, 0.45);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.9), 0 0 20px -5px rgba(251, 146, 60, 0.2);
+}
+
+/* Highlight Cards (Interactive Hero Features) */
+.highlight-card {
+  cursor: pointer;
+  outline: none;
+}
+
+.highlight-card.active {
+  border-color: rgba(251, 146, 60, 0.9) !important;
+  background: rgba(251, 146, 60, 0.12) !important;
+  box-shadow: 0 0 25px -4px rgba(251, 146, 60, 0.45);
+  transform: translateY(-4px);
+}
+
+html.light .highlight-card.active {
+  border-color: #fb923c !important;
+  background: #fff7ed !important;
+  box-shadow: 0 4px 20px -2px rgba(251, 146, 60, 0.3);
+}
+
+/* Special Highlight Card for "This Website" */
+.this-website-card {
+  position: relative;
+  border-color: rgba(251, 146, 60, 0.5) !important;
+  background: linear-gradient(180deg, rgba(30, 20, 15, 0.6) 0%, rgba(10, 14, 23, 0.8) 100%) !important;
+}
+
+.this-website-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #fb923c, #ffffff, #94a3b8);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 45%, #fb923c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-amber {
+  background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Pulse Glow Animation */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+
+/* Modal Transitions */
+.modal-overlay {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  transform: scale(0.95) translateY(15px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-overlay.active .modal-content {
+  transform: scale(1) translateY(0);
+}
+
+/* Filter Button Active State (Sleek Liquid Chrome / White) */
+.filter-btn.active {
+  background: #ffffff;
+  color: #040508 !important;
+  font-weight: 700;
+  border-color: #ffffff;
+  box-shadow: 0 4px 20px -2px rgba(255, 255, 255, 0.35);
+}

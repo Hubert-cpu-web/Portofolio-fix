@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="100%" height="100%" preserveAspectRatio="none">
+  <defs>
+    <!-- Liquid Chrome Gradients -->
+    <linearGradient id="obsidian-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040507" />
+      <stop offset="35%" stop-color="#0a0c10" />
+      <stop offset="70%" stop-color="#06070a" />
+      <stop offset="100%" stop-color="#020304" />
+    </linearGradient>
+
+    <!-- Metallic Specular Chrome Highlight -->
+    <linearGradient id="chrome-sheen-1" x1="0%" y1="0%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.35" />
+      <stop offset="15%" stop-color="#94a3b8" stop-opacity="0.1" />
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.4" />
+      <stop offset="55%" stop-color="#334155" stop-opacity="0.05" />
+      <stop offset="85%" stop-color="#ffffff" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="chrome-ribbon" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#e2e8f0" stop-opacity="0.5" />
+      <stop offset="20%" stop-color="#64748b" stop-opacity="0.15" />
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0.7" />
+      <stop offset="60%" stop-color="#1e293b" stop-opacity="0.2" />
+      <stop offset="80%" stop-color="#cbd5e1" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#090d16" stop-opacity="0.0" />
+    </linearGradient>
+
+    <!-- Subtle Apricot Glow (Rex Orange County Touch) -->
+    <radialGradient id="apricot-glow" cx="80%" cy="20%" r="50%">
+      <stop offset="0%" stop-color="#fb923c" stop-opacity="0.1" />
+      <stop offset="60%" stop-color="#f97316" stop-opacity="0.02" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Chrome Fluid Waves Filter -->
+    <filter id="liquid-blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+    </filter>
+  </defs>
+
+  <!-- Deep Obsidian Base -->
+  <rect width="1600" height="1000" fill="url(#obsidian-dark)" />
+  <rect width="1600" height="1000" fill="url(#apricot-glow)" />
+
+  <!-- Liquid Chrome Ribbon Waves (Top Arch) -->
+  <path d="M-100,200 C300,-50 700,350 1200,80 C1450,-30 1650,150 1750,220 L1750,-50 L-100,-50 Z" 
+        fill="url(#chrome-sheen-1)" opacity="0.45" />
+
+  <!-- Flowing Liquid Chrome Wave 1 (Upper Arc) -->
+  <path d="M-50,140 C280,-40 680,260 1150,50 C1400,-60 1620,120 1700,180" 
+        fill="none" stroke="url(#chrome-ribbon)" stroke-width="60" stroke-linecap="round" opacity="0.4" filter="url(#liquid-blur)" />
+  <path d="M-50,140 C280,-40 680,260 1150,50 C1400,-60 1620,120 1700,180" 
+        fill="none" stroke="#ffffff" stroke-width="3" opacity="0.6" />
+
+  <!-- Flowing Liquid Chrome Wave 2 (Middle Sweep) -->
+  <path d="M-100,550 C200,280 600,680 1050,420 C1350,250 1550,500 1750,450" 
+        fill="none" stroke="url(#chrome-sheen-1)" stroke-width="120" opacity="0.25" filter="url(#liquid-blur)" />
+  <path d="M-100,550 C200,280 600,680 1050,420 C1350,250 1550,500 1750,450" 
+        fill="none" stroke="#f1f5f9" stroke-width="2.5" opacity="0.4" />
+
+  <!-- Flowing Liquid Chrome Wave 3 (Bottom Arc) -->
+  <path d="M-50,850 C400,600 850,980 1300,750 C1550,620 1680,820 1750,800" 
+        fill="none" stroke="url(#chrome-ribbon)" stroke-width="80" opacity="0.2" filter="url(#liquid-blur)" />
+
+  <!-- Chrome Droplets & Water Bubbles (Matching reference image details) -->
+  <circle cx="280" cy="380" r="14" fill="#0f172a" stroke="#94a3b8" stroke-width="2" opacity="0.5" />
+  <circle cx="284" cy="376" r="3" fill="#ffffff" opacity="0.8" />
+
+  <circle cx="720" cy="180" r="8" fill="#0f172a" stroke="#cbd5e1" stroke-width="1.5" opacity="0.6" />
+  <circle cx="722" cy="178" r="2" fill="#ffffff" opacity="0.9" />
+
+  <circle cx="1320" cy="320" r="18" fill="#0a0f1d" stroke="#64748b" stroke-width="2.5" opacity="0.4" />
+  <circle cx="1325" cy="315" r="4" fill="#ffffff" opacity="0.85" />
+
+  <circle cx="1450" cy="580" r="10" fill="#0f172a" stroke="#94a3b8" stroke-width="1.8" opacity="0.5" />
+  <circle cx="1453" cy="577" r="2" fill="#ffffff" opacity="0.9" />
+
+  <circle cx="480" cy="720" r="12" fill="#0f172a" stroke="#cbd5e1" stroke-width="2" opacity="0.5" />
+  <circle cx="483" cy="717" r="3" fill="#ffffff" opacity="0.9" />
+
+  <!-- Sparkles / 4-point Chrome Stars (Matching reference image top left/middle) -->
+  <!-- Star 1 -->
+  <g transform="translate(750, 240) scale(0.9)">
+    <path d="M0,-24 Q0,0 24,0 Q0,0 0,24 Q0,0 -24,0 Q0,0 0,-24 Z" fill="#ffffff" opacity="0.85" />
+    <circle cx="0" cy="0" r="3" fill="#ffffff" />
+  </g>
+  <!-- Mini Star 2 -->
+  <g transform="translate(785, 275) scale(0.45)">
+    <path d="M0,-24 Q0,0 24,0 Q0,0 0,24 Q0,0 -24,0 Q0,0 0,-24 Z" fill="#ffffff" opacity="0.7" />
+  </g>
+  <!-- Star 3 -->
+  <g transform="translate(190, 320) scale(0.55)">
+    <path d="M0,-24 Q0,0 24,0 Q0,0 0,24 Q0,0 -24,0 Q0,0 0,-24 Z" fill="#e2e8f0" opacity="0.6" />
+  </g>
+</svg>

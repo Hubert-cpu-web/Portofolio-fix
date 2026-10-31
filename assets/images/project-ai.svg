@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <defs>
+    <radialGradient id="ai-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="purple-pink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="480" rx="16" fill="#0b0f19" />
+  <circle cx="400" cy="240" r="320" fill="url(#ai-glow)" />
+
+  <!-- Main AI App Interface -->
+  <g transform="translate(60, 40)">
+    <rect width="680" height="400" rx="14" fill="#111827" stroke="#374151" stroke-width="1.2" />
+
+    <!-- Header -->
+    <rect width="680" height="50" rx="14" fill="#1f2937" />
+    <circle cx="25" cy="25" r="5" fill="#ef4444" />
+    <circle cx="42" cy="25" r="5" fill="#f59e0b" />
+    <circle cx="59" cy="25" r="5" fill="#10b981" />
+    
+    <text x="100" y="30" fill="#f3f4f6" font-family="sans-serif" font-size="13" font-weight="bold">✨ GeniusPrompt AI Studio</text>
+    <rect x="540" y="14" width="115" height="22" rx="11" fill="url(#purple-pink)" />
+    <text x="597" y="29" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle">GPT-4o &amp; Gemini</text>
+
+    <!-- Chat Area -->
+    <!-- User Prompt Bubble -->
+    <g transform="translate(180, 80)">
+      <rect width="460" height="60" rx="10" fill="#374151" />
+      <text x="20" y="26" fill="#f9fafb" font-family="sans-serif" font-size="12">Buatkan 5 ide headline persuasif untuk peluncuran produk SaaS baru!</text>
+      <text x="20" y="45" fill="#9ca3af" font-family="sans-serif" font-size="10">Tone: High-converting, Energetic, Professional</text>
+    </g>
+
+    <!-- AI Output Card -->
+    <g transform="translate(40, 160)">
+      <rect width="600" height="150" rx="10" fill="#1e1b4b" stroke="#6366f1" stroke-width="1.2" />
+      <circle cx="30" cy="30" r="14" fill="url(#purple-pink)" />
+      <text x="30" y="35" fill="#ffffff" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle">✨</text>
+      <text x="55" y="35" fill="#e0e7ff" font-family="sans-serif" font-size="13" font-weight="bold">AI Response Generated (0.8s)</text>
+
+      <text x="30" y="70" fill="#f3f4f6" font-family="sans-serif" font-size="11">1. "Otomasi Alur Kerja Anda 10x Lebih Cepat Tanpa Ribet Coding!"</text>
+      <text x="30" y="92" fill="#f3f4f6" font-family="sans-serif" font-size="11">2. "Platform SaaS All-in-One yang Dicintai Lebih dari 5,000+ Tim Global."</text>
+      <text x="30" y="114" fill="#f3f4f6" font-family="sans-serif" font-size="11">3. "Tingkatkan Konversi dan Hemat 15 Jam Setiap Pekan Mulai Hari Ini."</text>
+
+      <rect x="500" y="112" width="80" height="24" rx="5" fill="#4f46e5" />
+      <text x="540" y="128" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle">Copy All</text>
+    </g>
+
+    <!-- Input Bar -->
+    <g transform="translate(40, 330)">
+      <rect width="600" height="50" rx="10" fill="#1f2937" stroke="#4b5563" stroke-width="1" />
+      <text x="25" y="31" fill="#9ca3af" font-family="sans-serif" font-size="12">Ketik instruksi atau prompt Anda di sini...</text>
+      <rect x="520" y="8" width="65" height="34" rx="8" fill="url(#purple-pink)" />
+      <text x="552" y="29" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle">Generate</text>
+    </g>
+  </g>
+</svg>
